@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div
+      class="w-full min-h-screen flex justify-center items-center bg-blue-600"
+    >
+      <div class="w-[550px] p-[40px] bg-white rounded-md">
+        <h1 class="text-[28px] font-bold text-center">Password Generator</h1>
+        <hr class="border-none my-[25px] h-[1.2px] bg-gray-300 text-gray-300" />
+        <div
+          class="flex justify-between items-center w-full h-[60px] rounded-lg border-[1.5px] border-gray-400"
+        >
+          <span
+            class="block pl-[25px] text-[24px] font-semibold cursor-pointer tracking-wider"
+            id="result-pwd"
+          ></span>
+          <i
+            class="block fa-regular fa-copy text-[28px] pr-[10px] cursor-pointer copyBtn"
+          ></i>
+        </div>
+        <div class="pb-[30px]">
+          <input
+            type="range"
+            class="password-strength"
+            min="0"
+            max="100"
+            step="25"
+          />
+        </div>
+
+        <div class="pb-[40px] font-semibold">
+          <div class="flex justify-between items-center pb-[10px]">
+            <label class="text-[20px] block">Password Length</label>
+            <p class="text-[20px] slider-value"></p>
+          </div>
+          <input
+            type="range"
+            class="progress"
+            min="1"
+            max="30"
+            value="15"
+            step="1"
+          />
+        </div>
+        <div>
+          <h2 class="text-[20px] font-semibold pb-[15px]">Password Settings</h2>
+          <div
+            class="text-gray-400 text-[22px] grid grid-cols-2 *:pb-[10px] options"
+          >
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="lowercase"
+                name="lowercase"
+                value="lowercase"
+                checked
+              />
+              <label for="lowercase"> Lowercase (a-z)</label><br />
+            </div>
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="uppercase"
+                name="uppercase"
+                value="uppercase"
+              />
+              <label for="uppercase" class="pl-[5px]"> Uppercase (A-Z)</label
+              ><br />
+            </div>
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="numbers"
+                name="numbers"
+                value="numbers"
+              />
+              <label for="numbers" class="pl-[5px]"> Numbers (0-9)</label><br />
+            </div>
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="symbols"
+                name="symbols"
+                value="symbols"
+              />
+              <label for="symbols" class="pl-[5px]"> Symbols (!-$^+)</label
+              ><br />
+            </div>
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="duplicate"
+                name="duplicate"
+                value="duplicate"
+              />
+              <label for="duplicate" class="pl-[5px]">No Duplicates</label
+              ><br />
+            </div>
+            <div class="flex items-center gap-[10px] option">
+              <input
+                type="checkbox"
+                class="w-[16px] h-[16px]"
+                id="spaces"
+                name="spaces"
+                value="spaces"
+              />
+              <label for="spaces" class="pl-[5px]"> Include Spaces</label><br />
+            </div>
+          </div>
+          <button
+            class="w-full h-[50px] mt-[30px] text-[20px] bg-blue-600 text-white font-semibold rounded-xl genPwd"
+          >
+            GENERATE PASSWORD
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
